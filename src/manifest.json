@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "ChatGPT context length viewer.",
+  "version": "1.0",
+  "description": "Let's you view the raw tokens and context length of ChatGPT. Intercept requests to chat.openai.com and send data to a content script. ",
+  "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
+  "background": {
+      "scripts": ["background.js"]
+  },
+  "content_scripts": [
+      {
+          "matches": ["*://chat.openai.com/*"],
+          "js": ["content.js"]
+      }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "see-ctx-len",
+  "version": "0.1.0",
+  "description": "See the context length in the ChatGPT interface.",
+  "main": "index.js",
+  "repository": "https://github.com/maxeonyx/see-ctx-len",
+  "author": "maxeonyx",
+  "license": "MIT",
+  "devDependencies": {
+    "@webextension-toolbox/webextension-toolbox": "^6.0.0"
+  },
+  "dependencies": {
+    "web-ext": "^7.6.2"
+  },
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && cp -r src/* dist/",
+    "ff": "web-ext run --source-dir src/ --browser-console --start-url=https://chat.openai.com/ --profile-create-if-missing --keep-profile-changes --firefox-profile ./firefox-profile"
+  }
+}
